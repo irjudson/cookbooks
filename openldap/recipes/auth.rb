@@ -34,7 +34,7 @@ template "/etc/ldap.conf" do
   mode 0644
   owner "root"
   group "root"
-end    
+end
 
 template "/etc/ldap/ldap.conf" do
   source "ldap-ldap.conf.erb"
@@ -60,11 +60,4 @@ end
     group "root"
     notifies :restart, resources(:service => "ssh"), :delayed
   end
-end
-
-template "/etc/security/login_access.conf" do
-  source "login_access.conf.erb"
-  mode 0644
-  owner "root"
-  group "root"
 end
